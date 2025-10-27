@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="top-bar">
+      <button id="theme-toggle">🌙</button>
+      <h2>Scientific Calculator</h2>
+    </div>
+
+    <div class="display">
+      <div id="expression"></div>
+      <div id="result">0</div>
+    </div>
+
+    <div class="buttons">
+      <!-- Row 1 -->
+      <button class="func" onclick="clearAll()">AC</button>
+      <button class="func" onclick="deleteChar()">DEL</button>
+      <button class="func" onclick="memoryClear()">MC</button>
+      <button class="func" onclick="memoryRecall()">MR</button>
+
+      <!-- Row 2 -->
+      <button class="func" onclick="memoryAdd()">M+</button>
+      <button class="func" onclick="memorySubtract()">M-</button>
+      <button class="func" onclick="insert('(')">(</button>
+      <button class="func" onclick="insert(')')">)</button>
+
+      <!-- Row 3 -->
+      <button onclick="insert('7')">7</button>
+      <button onclick="insert('8')">8</button>
+      <button onclick="insert('9')">9</button>
+      <button class="op" onclick="insert('/')">÷</button>
+
+      <!-- Row 4 -->
+      <button onclick="insert('4')">4</button>
+      <button onclick="insert('5')">5</button>
+      <button onclick="insert('6')">6</button>
+      <button class="op" onclick="insert('*')">×</button>
+
+      <!-- Row 5 -->
+      <button onclick="insert('1')">1</button>
+      <button onclick="insert('2')">2</button>
+      <button onclick="insert('3')">3</button>
+      <button class="op" onclick="insert('-')">−</button>
+
+      <!-- Row 6 -->
+      <button onclick="insert('0')">0</button>
+      <button onclick="insert('.')">.</button>
+      <button id="equals" onclick="calculate()">=</button>
+      <button class="op" onclick="insert('+')">+</button>
+
+      <!-- Row 7: Scientific -->
+      <button onclick="insert('Math.sin(')">sin</button>
+      <button onclick="insert('Math.cos(')">cos</button>
+      <button onclick="insert('Math.tan(')">tan</button>
+      <button onclick="insert('Math.sqrt(')">√</button>
+
+      <!-- Row 8 -->
+      <button onclick="insert('Math.log10(')">log</button>
+      <button onclick="insert('Math.log(')">ln</button>
+      <button onclick="insert('**2')">x²</button>
+      <button onclick="insert('**')">xʸ</button>
+
+      <!-- Row 9 -->
+      <button onclick="insert('Math.PI')">π</button>
+      <button onclick="insert('Math.E')">e</button>
+      <button onclick="factorial()">n!</button>
+      <button class="func" onclick="showHistory()">🕓</button>
+    </div>
+  </div>
+
+  <!-- History Panel -->
+  <div class="history" id="history">
+    <h3>Calculation History</h3>
+    <div id="historyList"></div>
+    <button class="clearHistory" onclick="clearHistory()">Clear History</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
